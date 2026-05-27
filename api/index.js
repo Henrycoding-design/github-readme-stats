@@ -50,6 +50,9 @@ export default async (req, res) => {
     show,
   } = req.query;
   res.setHeader("Content-Type", "image/svg+xml");
+  if (username !== "Henrycoding-design") {
+    return res.status(403).send("Forbidden");
+  }
 
   const access = guardAccess({
     res,
